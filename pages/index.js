@@ -1,10 +1,15 @@
 import Head from "next/head";
-import Image from 'next/image'
-import { MicrophoneIcon, SearchIcon, ViewGridIcon } from "@heroicons/react/solid";
+import Image from "next/image";
+import {
+  MicrophoneIcon,
+  SearchIcon,
+  ViewGridIcon,
+} from "@heroicons/react/solid";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
-    <div>
+    <div className="flex flex-col items-center justify-center">
       <Head>
         <title>Guru | Foundation </title>
       </Head>
@@ -20,7 +25,7 @@ export default function Home() {
           <p className="link">Gmail</p>
           <p className="link">Images</p>
           {/* Icon */}
-          <ViewGridIcon className="h-10 w-10 p-2 rounded-full hover:bg-gray-100 cursor-pointer"  />
+          <ViewGridIcon className="h-10 w-10 p-2 rounded-full hover:bg-gray-100 cursor-pointer" />
           {/* Avatar */}
           <img
             src="https://yt3.ggpht.com/yti/ANoDKi6Q9l1vIxuf7fPiHUtE3wIwe7mUxG-RUlmaJw=s88-c-k-c0x00ffffff-no-rj-mo"
@@ -31,23 +36,28 @@ export default function Home() {
         </div>
       </header>
       {/* Body */}
-      <form className="flex flex-col items-center mt-24">
+      <form className="flex flex-col items-center mt-14 w-4/5">
         <Image
-        src="https://www.thehawk.in/hawkcontent/servlet/RDESController?command=rdm.Picture&sessionId=RDWEBD9ZXBMHEVOZY44KG0ZIGGJKEI9YBQY0U&app=rdes&partner=thehawk&type=7&uid=7fqeTRRcJ4ftYOyw41rbQiUSYivnjIvrF5837497"
-        height={100}
-        width={190}
-         />
-         <div className="flex w-full mt-5 hover:shadow-lg rounded-full border-gray-200 px-5 py-3 items-center max-w-md sm:max-w-xl lg:max-w-2xl" >
-           <SearchIcon className="h-5 mr-3 text-gray-500" />
-           <input type="text" className="flex-grow focus:outline-none" />
-           <MicrophoneIcon className="h-5" />
-         </div>
-         <div>
-           <button className="btn">Google Search</button>
-           <button className="btn">I'm feeling lucky</button>
-         </div>
+          src="https://www.thehawk.in/hawkcontent/servlet/RDESController?command=rdm.Picture&sessionId=RDWEBD9ZXBMHEVOZY44KG0ZIGGJKEI9YBQY0U&app=rdes&partner=thehawk&type=7&uid=7fqeTRRcJ4ftYOyw41rbQiUSYivnjIvrF5837497"
+          height={100}
+          width={190}
+        />
+        <div className="flex w-full mt-5 hover:shadow-lg rounded-full border-gray-200 px-5 py-3 items-center max-w-md sm:max-w-xl lg:max-w-2xl">
+          <SearchIcon className="h-5 mr-3 text-gray-500" />
+          <input
+            placeholder="Search..."
+            type="text"
+            className="flex-grow focus:outline-none"
+          />
+          <MicrophoneIcon className="h-5" />
+        </div>
+        <div className="mt-5 flex flex-col w=1/2 space-y-2 justify-center sm:space-y-0 sm:flex-row sm:space-x-4">
+          <button className="btn">Google Search</button>
+          <button className="btn">I'm feeling lucky</button>
+        </div>
       </form>
       {/* Footer */}
+      <Footer />
     </div>
   );
 }
